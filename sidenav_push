@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    left: 0;
+    background-color: #EFEFEF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #5C5D68;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #FFC609;
+}
+
+/* Newly added code for dropdown */
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 8px 8px 8px 32px;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  text-decoration: none;
+  font-size: 14px;
+  color: #5C5D68;
+  display: block;
+  transition: 0.3s;
+  background: none;
+  border: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #FFC609;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: #EFEFEF;
+    color: #F38F3E;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFEFEF;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav" style="width:250px; margin-top: 12.2%;">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Overview</a>
+  <a href="#">Training & Mangement</a>
+  <a href="#">Operational Definitions</a>
+  <button class="dropdown-btn">1. Risk Management
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">RM 1.1 Data Privacy</a>
+    <a href="#">RM 1.2 IT Security</a>
+    <a href="#">RM 1.3 Human Liabilities</a>
+    <a href="#">RM 1.4 Financial/Operational Liabilities</a>
+  </div>
+  <button class="dropdown-btn">2. Human Resources
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">HR 2.1 Standards of Excellence (Work Environment and Conduct)</a>
+    <a href="#">HR 2.2 Employment and Training</a>
+    <a href="#">HR 2.3 Conduct, Performance, and Management</a>
+    <a href="#">HR 2.4 Compensation and Benefits</a>
+    <a href="#">HR 2.5 Health and Safety</a>
+  </div>
+  <button class="dropdown-btn">3. Financial Management
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">FM 3.1 Accounting Procedures</a>
+    <a href="#">FM 3.2 Internal Controls</a>
+    <a href="#">FM 3.3 Financial Planning and Reporting</a>
+    <a href="#">FM 3.4 Revenue and Receivables</a>
+    <a href="#">FM 3.5 Expenses and Payables</a>
+    <a href="#">FM 3.6 Asset Management</a>
+  </div>
+  <button class="dropdown-btn">4. Program Services
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">PS 4.1 Program Quality</a>
+    <a href="#">PS 4.2 Program Services</a>
+    <a href="#">PS 4.3 Participant Welfare and Wellness</a>
+    <a href="#">PS 4.4 Aquatic Activities</a>
+    <a href="#">PS 4.5 Program Trips and Overnights</a>
+    <a href="#">PS 4.6 Bah&iacutea de los Angeles</a>
+  </div>
+  <button class="dropdown-btn">5. Fundraising
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">FR 5.1 Guiding Principles</a>
+    <a href="#">FR 5.2 Philanthropic Process</a>
+    <a href="#">FR 5.3 Fundraising Ethics</a>
+    <a href="#">FR 5.4 Donor Privacy and Confidentiality</a>
+    <a href="#">FR 5.5 Donor Record Management</a>
+    <a href="#">FR 5.6 Gift Acceptance</a>
+    <a href="#">FR 5.7 Gift Entry and Recording</a>
+    <a href="#">FR 5.8 Gift Acknowledgement</a>
+    <a href="#">FR 5.9 Donor Recognition</a>
+    <a href="#">FR 5.10 Recognition Categories and Methods</a>
+    <a href="#">FR 5.11 Capital Campaigns</a>
+    <a href="#">FR 5.12 Board of Directors as Fundraisers</a>
+    <a href="#">FR 5.13 Annual Fundraising Event</a>
+    <a href="#">FR 5.14 Other Fundraising Events</a>
+  </div>
+  <button class="dropdown-btn">6. Operational Management
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">OM 6.1 Emergency Prevention/Preparedness and Response</a>
+    <a href="#">OM 6.2 Events</a>
+    <a href="#">OM 6.3 Visitors</a>
+    <a href="#">OM 6.4 Americans with Disabilities Act (ADA)</a>
+    <a href="#">OM 6.5 Conditions of Participation</a>
+    <a href="#">OM 6.6 Injury and Illness Prevention Program</a>
+    <a href="#">OM 6.7 Additional Requirements for Partners</a>
+    <a href="#">OM 6.8 Shared Systems</a>
+    <a href="#">OM 6.9 Intellectual Property</a>
+  </div>
+  <button class="dropdown-btn">7. Communication
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">CO 7.1 Communication Principles and Systems</a>
+    <a href="#">CO 7.2 Email</a>
+    <a href="#">CO 7.3 Media</a>
+    <a href="#">CO 7.4 Brand Identity and Style Guides</a>
+    <a href="#">CO 7.5 Social Media</a>
+    <a href="#">CO 7.6 Website</a>
+  </div>
+  <button class="dropdown-btn">8. Facility & Supply
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">FS 8.1 General Site/Facility</a>
+    <a href="#">FS 8.2 Hours of Operation</a>
+    <a href="#">FS 8.3 Space Usage & Access</a>
+    <a href="#">FS 8.4 Supplies and Equipment</a>
+    <a href="#">FS 8.5 Food Safety & Service</a>
+    <a href="#">FS 8.6 Technology</a>
+    <a href="#">FS 8.7 Sustainability</a>
+  </div>
+</div>
+
+
+<div class="w3-container" style="position: sticky; top: 0; background-color:#D3EEF9;">
+  <h1><img src="med_logo.png" width="300"></img></h1>
+</div>
+
+<span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Open</span>
+
+<div id="main" style="margin-left:250px">
+<h1><center>1. Risk Management Policy (RM)</center></h1>
+<p><span style="font-weight: 400;">Growth and innovation are hallmarks of Ocean Discovery Institute's success - and they require taking risks. Whether our students take risks that enable them to realize their potential or our organization ventures to explore growth and replication, we know that risk taking is part of what makes us strong. </span></p>
+<p><span style="font-weight: 400;">Risk can take many forms, including strategic, operational, financial, and compliance. Individually or combined, these risks can jeopardize our financial and operational stability. Proactively assessing, mitigating, and managing risks is the best way to ensure that our students are able to learn and grow in a safe environment and that we can continue to deliver tuition-free programming as a trusted member of our community. </span></p>
+<p><span style="font-weight: 400;">Risk Management is defined as our ability to deliberately and successfully manage risk and negate potential consequences without unnecessarily limiting activities that advance our interests and Ocean Discovery Institute&rsquo;s mission. We acknowledge that Ocean Discovery Institute is subject to certain risks that affect our ability to operate; serve our students, clients, and donors; and protect assets. Risk is inherent to any activity, and it is neither possible, nor advantageous, to entirely eliminate risk from an activity without stopping that activity. Risks that must be managed include those to employees and volunteers, liability to others, property, and our organizational reputation. If risks are not effectively managed there may be substantial costs that are not only financial, but may also include substantial damage to reputation, opportunity costs, potential litigation, distraction from core activities, serious injury, obsolescence, and others. </span></p>
+<p><span style="font-weight: 400;">As such, effective risk management requires a holistic "enterprise" approach supported by shared systems and the active involvement and participation of the entire Ocean Discovery Institute community. Risk Management policies and procedures are embedded throughout the Policy Guide. They are critical to ensuring financial, programmatic, and organizational wellbeing. The Risk Management Policy provides a framework for consistent decision making across the organization and guides the development of related location or department specific policies and procedures. </span></p>
+<p><span style="font-weight: 400;">The Risk Management Policy Statements will:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Include provisions and criteria for the use of Risk Management Plans for key activities, projects, or operations, and a reliable means to capture and make available knowledge to improve organizational risk management.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Provide routine assessment which employs a recognized risk management methodology to proactively identify and treat organizational risk.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Enable decision making across stakeholders, within areas of responsibility, and escalate with broader organization risk, significant risk, and/or fiduciary impacts.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Consider the risk in each of the following categories: strategic, compliance, reputational, financial, and operational.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Consider the activities of all stakeholders, including employees, volunteers, partners, participants, and visitors.</span></li>
+</ul>
+<p><span style="font-weight: 400;">The Risk Management Policy Statements:</span></p>
+<ol>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Data Privacy</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">IT Security</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Human Liabilities</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Financial/Operational Liabilities</span></li>
+</ol>
+</ol>
+<p><strong>Procedures</strong></p>
+<p><span style="font-weight: 400;">The Risk Management Policy is operationalized through procedures included in the following:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Risk Management Manual </span></li>
+</ul>
+<p><br /><strong>Person Accountable for Maintaining Policy and Demonstrating Compliance: </strong><span style="font-weight: 400;">The Associate Director</span></p>
+
+<h3><center><em>Policy Statements</em></center></h3>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><em>RM 1.1 Data Privacy</em></p>
+<p><strong>RM 1.1.1</strong> <strong>Data Classification</strong></p>
+<p><span style="font-weight: 400;">Ocean Discovery trains employees to recognize and protect data based on classification levels: &nbsp;Confidential, Sensitive, and Public. &nbsp;Confidential data of Ocean Discovery Institute is handled only by authorized users and for the purposes required by the job. Confidential data is housed in SaaS secure systems (i.e. Data Propeller Cayen Systems, Raiser&rsquo;s Edge, QuickBooks, Paychex). &nbsp;If at any time Confidential data temporarily lies outside of the SaaS secure system, protective controls (such as encryption, passwords, physical safeguarding, or secure disposal) must be followed. &nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Observation/Interview</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Security/Penetration Test of Databases</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Inquiry on data handling practices</span></li>
+</ul>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>RM 1.1.2 Responsibility for Privacy and Confidentiality</strong></p>
+<p><span style="font-weight: 400;">Users who are authorized to obtain data must ensure that it is protected to the extent required by law or Ocean Discovery policy. For example, when high confidential data is transferred from a well-secured system such as Data Propeller Cayen Systems to a user's location, adequate security measures must be in place at the destination computer to protect this data. No information of a confidential, sensitive, or commercially valuable nature belonging to Ocean Discovery should ever be posted on a social networking site. </span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Written Documentation</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Confidentiality Statement</span></li>
+</ul>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>RM 1.1.3 Password Protections and Standards</strong></p>
+<p><span style="font-weight: 400;">Passwords are an important aspect of computer security as they are the front line of protection for user accounts. A poorly chosen password may result in a compromise of Ocean Discovery&rsquo;s entire network. As such, all Ocean Discovery staff are responsible for taking the appropriate steps to select and secure their password. &nbsp;Best practices recommended for password construction are: Minimum length of eight (8) characters on all systems; Not be a dictionary word or proper name; Include a number, uppercase, lowercase, and symbol; Not be the same as the User ID; Not be identical to the previous ten (10) passwords; Not follow the same password convention.</span></p>
+<p><span style="font-weight: 400;">Network and application administrator passwords as well as database user passwords must be changed at least every 90 days. &nbsp;For SaaS users, browser password save features must be disabled. &nbsp;All systems level passwords must be part of the IT administered global password management database. The use of an encrypted password storage application is acceptable, although extreme care must be taken to protect access to that application. &nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Written Documentation</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Penetration Test</span></li>
+</ul>
+</ul>
+</ul>
+<p><strong>RM 1.1.4 Physical Controls of Hard Copies and Secure Destruction of Paper</strong></p>
+<p><span style="font-weight: 400;">Hard copies of confidential must be protected while in transit and at resting place using physical controls. &nbsp;Physical controls may include locked cabinets, financial safes, restricted access storage, or maintaining the item safeguarded in your possession while in use (ex. sealed envelopes or binders temporarily carried). &nbsp;All confidential data which is required to be printed or written is shredded upon disposal.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Oral Interviews</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Inquiry</span></li>
+<li style="font-weight: 400;"></li>
+</ul>
+</ul>
+</ul>
+<p><strong>RM 1.1.5 Secure Disposal or Re-use of Equipment </strong></p>
+<p><span style="font-weight: 400;">When equipment is being disposed of, all data on the equipment (e.g. on hard disks or tapes) is physically destroyed prior to leaving the premises for disposal. Ocean Discovery ensures that where electronic media is to be removed from the premises for repair, where possible, the data is securely overwritten.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Oral Interviews</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Inquiry</span></li>
+</ul>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>RM 1.1.6 Privacy Policy</strong></p>
+<p><span style="font-weight: 400;">Ocean Discovery Institute&rsquo;s policy for governing personal data are documented in our online privacy policy, located at </span><a href="https://51383.thankyou4caring.org/page.aspx?pid=294"><span style="font-weight: 400;">https://51383.thankyou4caring.org/page.aspx?pid=294</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Written Documentation</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Verification of link</span></li>
+</ul>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>RM 1.1.7 Reporting Data Security Breaches and Weaknesses</strong></p>
+<p><span style="font-weight: 400;">Data security breaches and weaknesses, such as the loss of data, loss of printed material, known instances of un-authorized access, or the theft of a laptop must be reported to the Facilities Manager via email within 24 business hours of the incident. &nbsp;Where necessary, the incident is investigated by the Facilities Manager in coordination with the IT Consultant to determine risks, notification to affected parties, and subsequent course of action.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Compliance Measure</strong></p>
+<p><span style="font-weight: 400;">Oral Interviews</span></p>
+<ul>
+<ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Inquiry</span></li>
+</ul>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;"><em>RM 1.2 IT Security</em></span></p>
+
+</div>
+
+<script>
+/*    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-yellow";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-yellow", "");
+    }
+}
+*/
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>

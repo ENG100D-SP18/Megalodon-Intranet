@@ -1,0 +1,85 @@
+/* applies to anything of class "example-class-selector" */
+.example-class-selector {
+    margin-top: 2em;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+    /* Colors are in hexadecimal: http://www.colorpicker.com/ */
+    color: #CC00AA;
+}
+
+html, body, .container {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+  position: absolute;
+  right: 0px;
+}
+.a {
+  color: black;
+}
+.h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+.h2 {
+  font-family: 'Lato', sans-serif;
+}
+
+.h3 {
+  font-family: 'Lato', sans-serif;
+}
+
+.h4 {
+  font-family: 'Lato', sans-serif;
+}
+
+.h5 {
+  font-family: 'Lato', sans-serif;
+}
+
+.h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+.jumbotron {
+    position: relative;
+    background-color: #D3EEF9;
+    height: 100%;
+    width: 100%;
+}
+
+.jumbotron:after {
+    content:"";
+    /*background-color: #1B75BC;*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.jumbotron p {
+    color: #6e6e6e;
+}
+
+.jumbotron img {
+    padding: 5px;
+    float:left;
+}
+
+.profile {
+    margin-bottom: 20px;
+}
+
+.profile div, video, canvas {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
